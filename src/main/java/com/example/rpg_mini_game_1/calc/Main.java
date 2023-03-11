@@ -8,8 +8,8 @@ public class Main {
         treasureBoxes[2] = new TreasureBox(new Position(4, 6), "金貨", new Monster("スライム"));
         Map map = new Map(8, 8, treasureBoxes);
         ArrayList<Monster> monsters = new ArrayList<Monster>();
-        monsters.add(new Monster("ドラキー"));
+        monsters.add(new Slime());
         Person person = new Person("勇者", monsters);
-        // ViewManager.draw(map);
+        System.out.println("マップを表示します");
     }
 }

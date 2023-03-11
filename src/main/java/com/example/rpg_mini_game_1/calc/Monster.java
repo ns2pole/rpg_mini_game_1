@@ -1,15 +1,16 @@
-public class Monster {
+package com.example.rpg_mini_game_1.calc;
+
+public abstract class Monster {
     public String name;
     public int hp;
     public int mp;
 
-    public Monster(String name) {
-        this.name = name;
+    public Monster() {
         this.hp = 100;
         this.mp = 100;
     }
 
-    public void attack(Monster m) {
+    public abstract void attack(Monster m) {
         System.out.print(this.name + "の攻撃  ");
         System.out.println(m.name + "に30のダメージ");
         m.hp -= 30;
@@ -18,7 +19,7 @@ public class Monster {
         }
     }
 
-    public void magicAttack(Monster m) {
+    public abstract magicAttack(Monster m) {
         System.out.print(this.name + "の魔法攻撃  ");
         System.out.println(m.name + "に50のダメージ");
         m.hp -= 50;
