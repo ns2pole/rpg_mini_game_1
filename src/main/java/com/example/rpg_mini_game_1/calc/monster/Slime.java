@@ -1,3 +1,5 @@
+package com.example.rpg_mini_game_1.calc.monster;
+
 public class Slime extends Monster {
     public Slime() {
         this.name = "スライム";
@@ -13,4 +15,5 @@ public class Slime extends Monster {
             System.out.println(m.name + "は倒れた");
         }
     }
+
 }

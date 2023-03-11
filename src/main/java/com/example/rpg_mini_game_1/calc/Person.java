@@ -1,3 +1,7 @@
+package com.example.rpg_mini_game_1.calc;
+
+import com.example.rpg_mini_game_1.calc.monster.Monster;
+
 import java.util.ArrayList;
 public class Person {
     public String name;
@@ -9,9 +13,20 @@ public class Person {
         this.monsters = monsters;
     }
 
-    public void move() {
+    public void moveUp() {
         this.position.x++;
+    }
+
+    public void moveDown() {
+        this.position.x--;
+    }
+
+    public void moveRight() {
         this.position.y++;
+    }
+
+    public void moveLeft() {
+        this.position.y--;
     }
 
     public void investigate(TreasureBox[] treasureBoxes) {
@@ -22,5 +37,13 @@ public class Person {
             } else {
             }
         }
+    }
+
+    public String getMonsterStatus() {
+        String status = "";
+        for (Monster m : this.monsters) {
+            status += m.name + "のHP:" + m.hp + " ";
+        }
+        return status;
     }
 }
