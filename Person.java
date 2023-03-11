@@ -1,14 +1,12 @@
 import java.util.ArrayList;
 public class Person {
     public String name;
-    public String seibetu;
     public Position position = new Position(0, 0);
     public ArrayList<Monster> monsters;
-    
-    public Person(String name, String seibetu, int position) {
+
+    public Person(String name, ArrayList<Monster> monsters) {
         this.name = name;
-        this.seibetu = seibetu;
-        this.position = position;
+        this.monsters = monsters;
     }
 
     public void move() {

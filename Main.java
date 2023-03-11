@@ -2,31 +2,14 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Person p = new Person("勇者", "男", 4);
-        Monster m1 = new Monster("スライム1");
-        Monster m2 = new Monster("スライム2");
-        m1.attack(m2);
-        m2.attack(m1);
-        m1.magicAttack(m2);
-        m2.magicAttack(m1);
-        m1.magicAttack(m2);
-        // Map map = new Map();
-        // map.TreasureBoxes = new TreasureBox[3];
-        // map.TreasureBoxes[0] = new TreasureBox(4 ,"Sword");
-        // map.TreasureBoxes[1] = new TreasureBox(5 ,"Shield");
-        // map.TreasureBoxes[2] = new TreasureBox(6 ,"Potion");
-        // Person p = new Person("勇者", "男", 4);
-        // p.investigate(map);
-        // p.move();
-        // p.investigate(map);
-        // p.move();
-        // p.investigate(map);
-        // p.move();
-        // p.investigate(map);
-        // p.move();
-        // p.investigate(map);
-        // p.move();
-        // p.investigate(map);
-    
+        TreasureBox[] treasureBoxes = new TreasureBox[3];
+        treasureBoxes[0] = new TreasureBox(new Position(6, 6), "銅貨", new Monster("スライム"));
+        treasureBoxes[1] = new TreasureBox(new Position(2, 6), "銀貨", new Monster("スライム"));
+        treasureBoxes[2] = new TreasureBox(new Position(4, 6), "金貨", new Monster("スライム"));
+        Map map = new Map(8, 8, treasureBoxes);
+        ArrayList<Monster> monsters = new ArrayList<Monster>();
+        monsters.add(new Monster("ドラキー"));
+        Person person = new Person("勇者", monsters);
+        // ViewManager.draw(map);
     }
 }
