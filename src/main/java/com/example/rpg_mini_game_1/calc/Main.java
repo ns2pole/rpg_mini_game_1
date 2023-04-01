@@ -11,7 +11,7 @@ public class Main {
         treasureBoxes[1] = new TreasureBox(new Position(2, 6), "銀貨", new Awk());
         treasureBoxes[2] = new TreasureBox(new Position(4, 6), "金貨", new Drakey());
         Map map = new Map(8, 8, treasureBoxes);
-        ArrayList<Monster> monsters = new ArrayList<Monster>();
+        ArrayList<Monster> monsters = new ArrayList<>();
         monsters.add(new Slime());
         monsters.add(new Drakey());
         Person person = new Person("勇者", monsters);

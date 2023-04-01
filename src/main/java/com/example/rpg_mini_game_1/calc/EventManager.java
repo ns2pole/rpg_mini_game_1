@@ -6,7 +6,7 @@ public class EventManager {
     public static void event(Person p) {
         System.out.println(p.getMonsterStatus());
         if(dize()) {
-            Monster m = new Awk();
+            Awk m = new Awk();
             System.out.println(m.name + "が現れた。");
             m.battle(p);
         }

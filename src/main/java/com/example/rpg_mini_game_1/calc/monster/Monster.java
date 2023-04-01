@@ -8,9 +8,6 @@ public abstract class Monster {
     public int hp;
     public int mp;
 
-    public Monster() {
-    }
-
     public static Monster getMonster() {
         int num = EventManager.getNumber(0, 2);
         switch (num) {
@@ -27,28 +24,18 @@ public abstract class Monster {
 
     public void battle(Monster m) {
         System.out.println("戦闘が始まりました");
-        while (this.hp > 0 || m.hp > 0) {
-            System.out.println(this.name + "のHP:" + this.hp);
+        while (this.hp > 0 && m.hp > 0) {
             this.attack(m);
             m.attack(this);
             System.out.println(this.name + "のHP:" + this.hp);
+            System.out.println(m.name + "のHP:" + m.hp);
         }
-        System.out.println("戦闘が終了しました");
     }
 
     public void battle(Person p) {
         System.out.println(this.name + "との戦闘が始まりました");
-
         for(Monster m : p.monsters) {
-            while (this.hp > 0 && m.hp > 0) {
-                System.out.println(this.name + "のHP:" + this.hp);
-                System.out.println(m.name + "のHP:" + m.hp);
-                this.attack(m);
-                m.attack(this);
-                System.out.println(this.name + "のHP:" + this.hp);
-                System.out.println(m.name + "のHP:" + m.hp);
-                System.out.println();
-            }
+            this.battle(m);
             if(m.hp <= 0) {
                 System.out.println("闘うモンスター変更");
             }

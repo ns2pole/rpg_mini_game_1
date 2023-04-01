@@ -7,6 +7,8 @@ public class Drakey extends Monster {
         this.mp = 50;
     }
 
+    //attackでランダム性を持たせる 普通のattackはphysical attackに名称変更。
+
     public void attack(Monster m) {
         System.out.print(this.name + "の攻撃  ");
         System.out.println(m.name + "に30のダメージ");
@@ -18,11 +20,15 @@ public class Drakey extends Monster {
 
     public void magicAttack(Monster m) {
         System.out.print(this.name + "の攻撃  ");
-        System.out.println(m.name + "に30のダメージ");
-        m.hp -= 30;
-        this.mp -= 10;
-        if(m.hp <= 0) {
-            System.out.println(m.name + "は倒れた");
+        System.out.println(m.name + "に50のダメージ");
+        if(this.mp < 10) {
+            System.out.println("しかしMPが足りない。");
+        } else {
+            m.hp -= 30;
+            this.mp -= 10;
+            if(m.hp <= 0) {
+                System.out.println(m.name + "は倒れた");
+            }
         }
     }
 

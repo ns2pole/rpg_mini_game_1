@@ -19,17 +19,15 @@ public class HelloApplication extends Application {
         Image image = new Image(input);
         ImageView imageView = new ImageView(image);
 
-        // Paneを作成して、ImageViewを追加する
-        Pane pane = new Pane(imageView);
-
-        // キー入力を受け付けるようにする
-        pane.setFocusTraversable(true);
-
-        // 画像の表示サイズを指定する
         imageView.setFitWidth(20);
         imageView.setFitHeight(20);
         imageView.setLayoutX(400);
         imageView.setLayoutY(400);
+        // Paneを作成して、ImageViewを追加する
+        Pane pane = new Pane(imageView);
+        // キー入力を受け付けるようにする
+        pane.setFocusTraversable(true);
+        // 画像の表示サイズを指定する
         Scene scene = new Scene(pane, 900, 1000);
         scene.setOnKeyPressed(event -> {
             // 上キーが押されたら画像を上に移動する
@@ -45,7 +43,6 @@ public class HelloApplication extends Application {
             if (event.getCode() == KeyCode.RIGHT) {
                 imageView.setLayoutX(imageView.getLayoutX() + 20);
             }
-            
         });
         stage.setTitle("こんにちは!");
         stage.setScene(scene);

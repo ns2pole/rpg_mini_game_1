@@ -2,13 +2,13 @@ package com.example.rpg_mini_game_1.calc;
 
 import java.util.ArrayList;
 public class Map {
-    public int Width;
-    public int Height;
-    public TreasureBox[] TreasureBoxes;
+    public int width;
+    public int height;
+    public TreasureBox[] treasureBoxes;
 
-    public Map(int Width, int Height, TreasureBox[] TreasureBoxes) {
-        this.Width = Width;
-        this.Height = Height;
-        this.TreasureBoxes = TreasureBoxes;
+    public Map(int width, int height, TreasureBox[] treasureBoxes) {
+        this.width = width;
+        this.height = height;
+        this.treasureBoxes = treasureBoxes;
     }
 }
