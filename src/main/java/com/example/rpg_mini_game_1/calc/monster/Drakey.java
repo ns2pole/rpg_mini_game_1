@@ -1,10 +1,12 @@
 package com.example.rpg_mini_game_1.calc.monster;
 
 public class Drakey extends Monster {
+    int magicPower;
     public Drakey() {
         this.name = "ドラキー";
         this.hp = 100;
         this.mp = 50;
+        this.magicPower = 10;
     }
 
     //attackでランダム性を持たせる 普通のattackはphysical attackに名称変更。
@@ -20,7 +22,7 @@ public class Drakey extends Monster {
 
     public void magicAttack(Monster m) {
         System.out.print(this.name + "の攻撃  ");
-        System.out.println(m.name + "に50のダメージ");
+        System.out.println(m.name + "に" + this.magicPower + "のダメージ");
         if(this.mp < 10) {
             System.out.println("しかしMPが足りない。");
         } else {
